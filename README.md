@@ -1,4 +1,4 @@
-# charm-markdown: A Galactic Markdown Module for Charm Framework (PHP8.1)
+# A Galactic Markdown Module for Charm Framework 3+
 
 Welcome to the charm-markdown module, a remarkable addition to the 
 [Charm Framework](https://github.com/neoground/charm) galaxy,
@@ -53,7 +53,7 @@ $arr = C::Markdown()->separateMarkdownFromYaml($content);
 
 ```
 
-This returns an array with keys 'yaml' (array) and 'markdown' (string), containing each part of the document.
+This returns an array with keys `yaml` (array) and `markdown` (string), containing each part of the document.
 
 ```php
 C::Markdown()->getYaml($content);
