@@ -62,10 +62,12 @@ C::Markdown()->getYaml($content);
 Extract the YAML array directly from the content string as an array.
 
 ```php
-C::Markdown()->getYaml($content);
+C::Markdown()->getMarkdownContent($content);
 ```
 
 Obtain the Markdown part directly from the content string as a string.
+
+---
 
 Embrace the charm-markdown Force and embark on an epic adventure of Markdown and YAML mastery in your Charm Framework
 application. May the Markdown be with you!
