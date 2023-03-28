@@ -1,0 +1,8 @@
+# +-------------------------------------------------------------------------+
+# | charm.yaml - The Charm Module Manifest                                  |
+# +-------------------------------------------------------------------------+
+
+name:    Charm-Markdown
+version: 1.0
+summary: Markdown support and handy features to work with Markdown content
+binding: \Neoground\Charm\Markdown\Markdown

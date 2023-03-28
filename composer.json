@@ -1,0 +1,26 @@
+{
+  "name": "neoground/charm-markdown",
+  "description": "Charm Markdown Module",
+  "homepage": "https://neoground.com/projects/charm",
+  "license": "MIT",
+  "version": "1.0",
+  "authors": [
+    {
+      "name": "Sven Reifschneider",
+      "homepage": "https://neoground.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.1",
+    "neoground/charm": "^3.0",
+    "erusev/parsedown": "^1.7",
+    "erusev/parsedown-extra": "^0.8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Neoground\\Charm\\Markdown\\": "app/"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable" : true
+}
