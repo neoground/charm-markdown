@@ -82,7 +82,7 @@ class MarkdownDocument
         // Add id slugs to each header for easy anchoring
         $html = preg_replace_callback(
             '/<h(\d)>(.*?)<\/h\d>/',
-            fn($match) => sprintf('<h%d id="%s" class="h%s mt-5">%s</h%d>', $match[1], C::Formatter()->slugify(html_entity_decode($match[2])), $match[1], $match[2], $match[1]),
+            fn($match) => sprintf('<h%d id="%s" class="h%s">%s</h%d>', $match[1], C::Formatter()->slugify(html_entity_decode($match[2])), $match[1], $match[2], $match[1]),
             $html
         );
 
