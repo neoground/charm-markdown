@@ -48,24 +48,38 @@ Unlock the secrets of the Markdown galaxy by accessing:
 
 Experience the power of charm-markdown with direct access:
 
+This returns an array with keys `yaml` (array) and `markdown` (string), containing each part of the document:
+
 ```php
 $arr = C::Markdown()->separateMarkdownFromYaml($content);
 
 ```
 
-This returns an array with keys `yaml` (array) and `markdown` (string), containing each part of the document.
+Extract the YAML array directly from the content string as an array:
 
 ```php
 C::Markdown()->getYaml($content);
 ```
 
-Extract the YAML array directly from the content string as an array.
+Obtain the Markdown part directly from the content string as a string:
 
 ```php
 C::Markdown()->getMarkdownContent($content);
 ```
 
-Obtain the Markdown part directly from the content string as a string.
+Format the Markdown part of the content string as HTML:
+
+```php
+C::Markdown()->toHtml($content);
+```
+
+## Usage in Views
+
+In Twig views you can output a markdown string directly as HTML with:
+
+```twig
+<div id="content">{{ markdownToHtml(markdownString)|raw }}</div>
+```
 
 ---
 

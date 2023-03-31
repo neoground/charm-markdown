@@ -53,4 +53,9 @@ class Markdown extends EngineManager implements ModuleInterface
         return $this->separateMarkdownFromYaml($content)['markdown'];
     }
 
+    public function toHtml(string $content)
+    {
+        return $this->fromString($content)->getHtml();
+    }
+
 }
