@@ -1,4 +1,4 @@
-# A Galactic Markdown Module for Charm Framework 3+
+# A Galactic Markdown Module for Charm Framework 3.1+
 
 Welcome to the charm-markdown module, a remarkable addition to the 
 [Charm Framework](https://github.com/neoground/charm) galaxy,
