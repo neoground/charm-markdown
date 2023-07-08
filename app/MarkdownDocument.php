@@ -50,20 +50,14 @@ class MarkdownDocument
         $yaml = '';
         $markdownContent = $markdown;
         if (str_starts_with($markdown, '---')) {
-            // Case where the whole YAML section is surrounded by "---"
+            // YAML section is surrounded by "---" and present
             $delimiterPos = strpos($markdown, '---', 3);
             if ($delimiterPos !== false) {
                 $yaml = substr($markdown, 0, $delimiterPos + 3);
                 $markdownContent = trim(substr($markdown, $delimiterPos + 3));
             }
-        } else {
-            // Case where YAML is at the top only
-            $delimiterPos = strpos($markdown, "\n---\n");
-            if ($delimiterPos !== false) {
-                $yaml = trim(substr($markdown, 0, $delimiterPos));
-                $markdownContent = trim(substr($markdown, $delimiterPos + 5));
-            }
         }
+
         return [
             'yaml' => str_replace("---", "", $yaml),
             'markdown' => $markdownContent,
