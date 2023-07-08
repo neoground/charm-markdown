@@ -65,7 +65,7 @@ class MarkdownDocument
             }
         }
         return [
-            'yaml' => $yaml,
+            'yaml' => str_replace("---", "", $yaml),
             'markdown' => $markdownContent,
         ];
     }
