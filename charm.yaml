@@ -3,6 +3,6 @@
 # +-------------------------------------------------------------------------+
 
 name:    Charm-Markdown
-version: 1.0
+version: 1.2
 summary: Markdown support and handy features to work with Markdown content
 binding: \Neoground\Charm\Markdown\Markdown
