@@ -45,6 +45,7 @@ Unlock the secrets of the Markdown galaxy by accessing:
 - `$doc->getYaml();` to retrieve the YAML frontmatter data as an array (or an empty array if not set)
 - `$doc->getHtml();` to generate the HTML content, with Markdown Extra support and "id" tags added to each heading for
   easy anchoring
+- `$doc->getContentsList()` to get an array of all headings as an easy table of contents
 
 Experience the power of charm-markdown with direct access:
 

@@ -18,6 +18,7 @@ class MarkdownDocument
 {
     protected array $frontmatter;
     protected string $content;
+    protected array $toc;
 
     public function __construct(string $content)
     {
@@ -66,20 +67,26 @@ class MarkdownDocument
 
     public function getHtml() : string
     {
-        $pd = new \ParsedownExtra();
+        $pd = new Charmdown();
         $pd->setUrlsLinked(false);
 
-        return $this->formatHtml($pd->text($this->content));
+        $html = $this->formatHtml($pd->text($this->content));
+        $this->toc = $pd->getContentsList();
+        return $html;
+    }
+
+    public function getContentsList() : array
+    {
+        if(empty($this->toc)) {
+            $pd = new Charmdown();
+            $pd->text($this->content);
+            $this->toc = $pd->getContentsList();
+        }
+
+        return $this->toc;
     }
 
     private function formatHtml(string $html): string {
-        // Add id slugs to each header for easy anchoring
-        $html = preg_replace_callback(
-            '/<h(\d)>(.*?)<\/h\d>/',
-            fn($match) => sprintf('<h%d id="%s" class="h%s">%s</h%d>', $match[1], C::Formatter()->slugify(html_entity_decode($match[2])), $match[1], $match[2], $match[1]),
-            $html
-        );
-
         // Replace encoded entities inside code blocks with real characters
         return preg_replace_callback(
             '/<code[^>]*>.*?<\/code>(*SKIP)(*FAIL)|&(?:[a-zA-Z0-9]+|#\d+|#x[a-fA-F0-9]+);/',
