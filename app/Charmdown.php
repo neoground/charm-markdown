@@ -62,6 +62,11 @@ class Charmdown extends \ParsedownExtra
             // Get the anchor of the heading to link from the ToC list
             $id = $Block['element']['attributes']['id'] ?? $this->createAnchorID($text);
 
+            // To prevent JS / CSS3 errors when an id starts numeric, we'll prepend "no" in those cases
+            if(is_numeric($id[0])) {
+                $id = "no" . $id;
+            }
+
             // Set attributes to head tags
             $Block['element']['attributes'] = [
                 'id' => $id,
